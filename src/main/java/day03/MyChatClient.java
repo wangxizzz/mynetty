@@ -23,6 +23,7 @@ public class MyChatClient {
             Bootstrap b = new Bootstrap();
             b.group(group).channel(NioSocketChannel.class)
                     .option(ChannelOption.TCP_NODELAY,true)
+                    // childHandler()与handler()方法相同。只是在childHandler中有两个线程组，这里只有一个
                     .handler(new MyChatClientInitializer());
 
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
