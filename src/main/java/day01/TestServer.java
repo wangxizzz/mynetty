@@ -17,7 +17,7 @@ import io.netty.handler.logging.LoggingHandler;
 
 /**
  * <Description>
- *
+ *  基于HTTP
  * @author wangxi
  */
 public class TestServer {

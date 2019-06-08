@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 
 /**
  * <Description>
- *
+ * 基于socket
  * @author wangxi
  */
 public class MyChatClient {
