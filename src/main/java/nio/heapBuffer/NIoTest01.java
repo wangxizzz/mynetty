@@ -1,4 +1,4 @@
-package nio;
+package nio.heapBuffer;
 
 import java.nio.IntBuffer;
 import java.security.SecureRandom;

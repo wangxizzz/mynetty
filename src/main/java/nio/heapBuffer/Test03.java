@@ -1,4 +1,4 @@
-package nio;
+package nio.heapBuffer;
 
 import java.nio.ByteBuffer;
 

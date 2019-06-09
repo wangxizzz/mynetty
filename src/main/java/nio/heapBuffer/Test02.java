@@ -1,4 +1,4 @@
-package nio;
+package nio.heapBuffer;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
