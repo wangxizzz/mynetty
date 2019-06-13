@@ -7,7 +7,7 @@ import java.nio.channels.FileChannel;
 
 /**
  * <Description>
- * 利用FileChannel读写文件
+ * 利用FileChannel读写文件.每次固定的读取字节数量，最后一个如果少于固定数量，就返回实际读取的长度
  * @author wangxi
  */
 public class Test02 {
