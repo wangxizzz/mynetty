@@ -26,7 +26,7 @@ public class Server {
     public static void main(String[] args) throws IOException {
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         serverSocketChannel.configureBlocking(false);
-        serverSocketChannel.bind(new InetSocketAddress(8080));
+        serverSocketChannel.socket().bind(new InetSocketAddress(8080));
         Selector selector = Selector.open();
         // OP_ACCEPT监听客户端事件
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
