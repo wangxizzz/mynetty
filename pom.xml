@@ -11,6 +11,7 @@
     <modules>
         <module>rpc01</module>
         <module>mynetty</module>
+        <module>rpc-netty</module>
     </modules>
 
     <properties>
