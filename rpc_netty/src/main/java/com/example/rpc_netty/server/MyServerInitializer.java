@@ -1,6 +1,6 @@
 package com.example.rpc_netty.server;
 
-import handler.MyServerHandler;
+import com.example.rpc_netty.handler.MyServerHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;

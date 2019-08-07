@@ -1,6 +1,6 @@
 package com.example.rpc_netty.factory;
 
-import constant.Constants;
+import com.example.rpc_netty.constant.Constants;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
