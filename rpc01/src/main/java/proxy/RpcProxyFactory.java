@@ -11,7 +11,7 @@ import java.lang.reflect.Proxy;
  */
 public class RpcProxyFactory {
     /**
-     * 多线程环境代理对象
+     * 多线程环境代理对象(获取类的代理对象)
      *
      * @param interfaceClass
      * @return T

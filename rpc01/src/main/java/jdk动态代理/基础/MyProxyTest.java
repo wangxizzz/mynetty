@@ -1,4 +1,4 @@
-package jdk动态代理;
+package jdk动态代理.基础;
 
 /**
  * Created by wxi.wang
@@ -7,8 +7,6 @@ package jdk动态代理;
  * Decription:
  */
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Proxy;
 

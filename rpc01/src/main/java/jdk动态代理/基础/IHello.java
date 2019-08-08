@@ -1,4 +1,4 @@
-package jdk动态代理;
+package jdk动态代理.基础;
 
 /**
  * Created by wxi.wang
