@@ -14,8 +14,8 @@ public class RpcResponseFuture {
     private final Condition condition = lock.newCondition();
     private Long requstId;
 
-    public RpcResponseFuture(Long requstId) {
-        this.requstId = requstId;
+    public RpcResponseFuture(Long requestId) {
+        this.requstId = requestId;
     }
 
     public byte[] get() {

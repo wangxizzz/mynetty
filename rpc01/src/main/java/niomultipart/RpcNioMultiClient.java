@@ -122,7 +122,7 @@ public class RpcNioMultiClient {
                 return;
             }
             byteBuffer.flip();
-            Long requsetId = byteBuffer.getLong();
+            Long requestId = byteBuffer.getLong();
 
             // 读取返回值长度
             byteBuffer = ByteBuffer.allocate(4);
@@ -143,7 +143,7 @@ public class RpcNioMultiClient {
             byte[] bytes = byteBuffer.array();
 
             // 将返回值放入指定容器
-            RpcContainer.addResponse(requsetId, bytes);
+            RpcContainer.addResponse(requestId, bytes);
         } catch (IOException e) {
             System.out.println("读取数据异常");
             e.printStackTrace();
