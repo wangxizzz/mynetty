@@ -4,7 +4,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
 /**
- * Created by MACHENIKE on 2018-12-03.
+ * Created by wangxi on 2018-12-03.
  */
 public class ThreadPool {
 

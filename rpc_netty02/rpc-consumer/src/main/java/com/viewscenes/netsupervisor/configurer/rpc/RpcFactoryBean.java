@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.lang.reflect.Proxy;
 
 /**
- * Created by MACHENIKE on 2018-12-03.
+ * Created by wangxi on 2018-12-03.
  */
 public class RpcFactoryBean<T> implements FactoryBean<T> {
 

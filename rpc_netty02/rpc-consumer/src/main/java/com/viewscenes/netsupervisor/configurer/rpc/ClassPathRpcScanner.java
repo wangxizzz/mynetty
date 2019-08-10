@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Set;
 
 /**
- * Created by MACHENIKE on 2018-12-03.
+ * Created by wangxi on 2018-12-03.
  */
 public class ClassPathRpcScanner extends ClassPathBeanDefinitionScanner{
 

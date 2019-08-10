@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * @program: rpc-provider
  * @description: ${description}
- * @author: shiqizhen
+ * @author: wangxi
  * @create: 2018-11-30 16:53
  **/
 public interface InfoUserService {

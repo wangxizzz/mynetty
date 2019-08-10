@@ -17,7 +17,7 @@ import java.util.Map;
 /**
  * @program: rpc-provider
  * @description: ${description}
- * @author: shiqizhen
+ * @author: wangxi
  * @create: 2018-11-30 17:27
  **/
 @ChannelHandler.Sharable

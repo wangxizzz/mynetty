@@ -20,7 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.SynchronousQueue;
 
 /**
- * Created by MACHENIKE on 2018-12-03.
+ * Created by wangxi on 2018-12-03.
  */
 @Component
 @ChannelHandler.Sharable

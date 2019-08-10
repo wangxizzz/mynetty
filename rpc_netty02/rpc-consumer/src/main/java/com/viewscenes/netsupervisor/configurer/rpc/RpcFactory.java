@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by MACHENIKE on 2018-12-03.
+ * Created by wangxi on 2018-12-03.
  */
 @Component
 public class RpcFactory<T> implements InvocationHandler {

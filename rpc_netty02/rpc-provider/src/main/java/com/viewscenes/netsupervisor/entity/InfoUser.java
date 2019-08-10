@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * @program: rpc-provider
  * @description: ${description}
- * @author: shiqizhen
+ * @author: wangxi
  * @create: 2018-11-30 10:11
  **/
 public class InfoUser  {

@@ -8,7 +8,7 @@ import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 /**
  * @program: rpc-provider
  * @description: ${description}
- * @author: shiqizhen
+ * @author: wangxi
  * @create: 2018-12-07 10:00
  **/
 public class JSONDecoder extends LengthFieldBasedFrameDecoder {

@@ -14,7 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * @program: rpc-provider
  * @description: ${description}
- * @author: shiqizhen
+ * @author: wangxi
  * @create: 2018-11-30 16:55
  **/
 @RpcService

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by MACHENIKE on 2018-11-30.
+ * Created by wangxi on 2018-11-30.
  */
 @Component
 public class ServiceRegistry {

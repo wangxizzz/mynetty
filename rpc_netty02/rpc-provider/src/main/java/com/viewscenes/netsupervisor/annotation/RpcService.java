@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 /**
  * @program: rpc-provider
  * @description: ${description}
- * @author: shiqizhen
+ * @author: wangxi
  * @create: 2018-11-30 17:07
  **/
 @Target({ElementType.TYPE})

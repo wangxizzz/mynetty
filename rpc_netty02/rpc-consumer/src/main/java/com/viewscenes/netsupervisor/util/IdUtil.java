@@ -6,7 +6,7 @@ package com.viewscenes.netsupervisor.util;
 
  * @Description: TODO(ID生成类，生成适用于各类场景的ID)
 
- * @author shiqizhen
+ * @author wangxi
 
  * @date 2017-9-15 上午10:05:13
 

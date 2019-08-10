@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @program: rpc-provider
  * @description: ${description}
- * @author: shiqizhen
+ * @author: wangxi
  * @create: 2018-12-07 09:56
  **/
 public class JSONEncoder extends MessageToMessageEncoder {
