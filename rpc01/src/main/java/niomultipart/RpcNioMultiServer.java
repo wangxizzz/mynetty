@@ -74,6 +74,8 @@ public class RpcNioMultiServer {
                         // 获得了可读的事件
                     } else if (key.isReadable()) {
                         SocketChannel channel = (SocketChannel) key.channel();
+                        // TODO 这里与selector线程同步读取客户端发过来的消息。
+                        // TODO 为啥不和下面异步发消息 一起异步呢？
                         byte[] bytes = readMsgFromClient(channel);
                         if (bytes != null && bytes.length > 0) {
                             // 读取之后将任务放入线程池异步返回(写回给客户端响应)
