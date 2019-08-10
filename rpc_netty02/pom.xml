@@ -10,6 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>rpc_netty02</artifactId>
-
+    <modules>
+        <module>rpc-consumer</module>
+        <module>rpc-provider</module>
+    </modules>
 
 </project>
