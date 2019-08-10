@@ -45,11 +45,12 @@ public class RpcNioMultiServerTask implements Runnable{
         try {
             Method method = obj.getClass().getMethod(methodName, parameterTypes);
             String result = (String) method.invoke(obj, arguments);
+            System.out.println("============provider端===执行客户端方法，结果为" +result);
             byte[] bytes = SerializeUtil.serialize(result);
             ByteBuffer buffer = ByteBuffer.allocate(bytes.length + 12);
             // 为了便于客户端获得请求ID，直接将id写在头部（这样客户端直接解析即可获得，不需要将所有消息反序列化才能得到）
             // 然后写入消息题的长度，最后写入返回内容
-            buffer.putLong(requestId);
+            buffer.putLong(requestId);  // long型id占8字节，内容长度int占4字节
             buffer.putInt(bytes.length);
             buffer.put(bytes);
             buffer.flip();

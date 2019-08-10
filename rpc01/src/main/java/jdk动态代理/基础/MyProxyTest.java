@@ -19,8 +19,7 @@ import java.lang.reflect.Proxy;
  * 5.通过代理对象调用目标方法
  */
 public class MyProxyTest {
-    public static void main(String[] args)
-            throws NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException {
+    public static void main(String[] args) {
         // =========================第一种==========================
         // 1、生成$Proxy0的class文件
 //        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");

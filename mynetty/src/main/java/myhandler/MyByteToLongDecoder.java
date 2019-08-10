@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class MyByteToLongDecoder extends ByteToMessageDecoder {
     @Override
-    protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
+    protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) {
         System.out.println("decode invoked");
         System.out.println(in.readableBytes());
 

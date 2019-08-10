@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * <Description>
  *
@@ -12,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RequestMultiObject {
+public class RequestMultiObject implements Serializable {
     private static final long serialVersionUID = 3132836600205356306L;
 
     // 请求id

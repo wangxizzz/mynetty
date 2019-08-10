@@ -12,7 +12,7 @@ import io.netty.handler.timeout.IdleStateEvent;
 public class MyServerHandler extends ChannelInboundHandlerAdapter {
     // ctx表示上下文对象，evt表示事件对象
     @Override
-    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) {
         if (evt instanceof IdleStateEvent) {
             IdleStateEvent event = (IdleStateEvent)evt;
             String eventType = null;

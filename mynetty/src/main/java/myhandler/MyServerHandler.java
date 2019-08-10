@@ -18,7 +18,7 @@ public class MyServerHandler extends SimpleChannelInboundHandler<Long> {
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         cause.printStackTrace();
         // 出现异常，关闭ChannelHandlerContext
         ctx.close();

@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public class RpcContainer {
     //返回值容器
     private static ConcurrentHashMap<Long, byte[]> responseContainer = new ConcurrentHashMap<>();
-    //请求对象容器
+    //请求对象容器(请求对象的返回结果Future容器)
     private static ConcurrentHashMap<Long, RpcResponseFuture> requestFuture = new ConcurrentHashMap<>();
     //请求id
     private volatile static AtomicLong requestId = new AtomicLong(0);

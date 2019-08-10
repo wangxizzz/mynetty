@@ -76,7 +76,7 @@ public class RpcNioMultiServer {
                         SocketChannel channel = (SocketChannel) key.channel();
                         byte[] bytes = readMsgFromClient(channel);
                         if (bytes != null && bytes.length > 0) {
-                            // 读取之后将任务放入线程池异步返回
+                            // 读取之后将任务放入线程池异步返回(写回给客户端响应)
                             RpcNioMultiServerTask task = new RpcNioMultiServerTask(bytes, channel);
                             ThreadPoolUtil.addTask(task);
                         }

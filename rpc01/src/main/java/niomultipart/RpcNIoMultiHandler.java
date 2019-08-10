@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
  */
 public class RpcNIoMultiHandler implements InvocationHandler {
     @Override
-    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+    public Object invoke(Object proxy, Method method, Object[] args) {
         // 获得请求id
         Long responseId = RpcContainer.getRequestId();
         // 封装请求对象

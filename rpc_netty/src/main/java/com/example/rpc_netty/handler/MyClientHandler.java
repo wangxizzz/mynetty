@@ -11,18 +11,18 @@ import io.netty.channel.SimpleChannelInboundHandler;
  */
 public class MyClientHandler extends SimpleChannelInboundHandler<String> {
     @Override
-    public void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
+    public void channelRead0(ChannelHandlerContext ctx, String msg) {
         System.out.println(msg);
     }
 
     @Override
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+    public void channelActive(ChannelHandlerContext ctx) {
         ctx.writeAndFlush("hello server\r\n");
         ctx.close();
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         cause.getStackTrace();
     }
 }

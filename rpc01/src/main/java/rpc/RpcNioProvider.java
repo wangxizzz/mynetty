@@ -13,7 +13,7 @@ import java.io.IOException;
  * @author wangxi
  */
 public class RpcNioProvider {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         // 将服务放进bean容器
         HelloService helloService = new HelloServiceImpl();
         BeanContainer.addBean(HelloService.class, helloService);
