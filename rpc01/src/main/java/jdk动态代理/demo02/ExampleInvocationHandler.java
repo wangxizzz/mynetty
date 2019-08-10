@@ -21,7 +21,7 @@ public class ExampleInvocationHandler implements InvocationHandler {
     /**
      *
      * @param proxy  代理对象(不是原始对象)
-     * @param method 要执行的方法
+     * @param method 要执行的方法(原始对象需要执行的方法)
      * @param args 要执行方法的参数
      * @return
      * @throws Throwable
