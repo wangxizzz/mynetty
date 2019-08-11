@@ -38,6 +38,7 @@ public class NettyServer implements ApplicationContextAware, InitializingBean {
 
     private static final Logger logger = LoggerFactory.getLogger(NettyServer.class);
     private static final EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+    // 相当于起了4个事件循环，一个EventLoop只关联一个线程，一个EventLoop可以关联多个channel
     private static final EventLoopGroup workerGroup = new NioEventLoopGroup(4);
 
     private Map<String, Object> serviceMap = new HashMap<>();
@@ -48,8 +49,9 @@ public class NettyServer implements ApplicationContextAware, InitializingBean {
     @Autowired
     ServiceRegistry registry;
 
+    @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-
+        // 通过这个上下文环境对象得到Spring容器中的Bean
         Map<String, Object> beans = applicationContext.getBeansWithAnnotation(RpcService.class);
         for (Object serviceBean : beans.values()) {
 
@@ -66,7 +68,8 @@ public class NettyServer implements ApplicationContextAware, InitializingBean {
         logger.info("已加载全部服务接口:{}", serviceMap);
     }
 
-    public void afterPropertiesSet() throws Exception {
+    @Override
+    public void afterPropertiesSet() {
         start();
     }
 
@@ -81,10 +84,10 @@ public class NettyServer implements ApplicationContextAware, InitializingBean {
                         channel(NioServerSocketChannel.class).
                         option(ChannelOption.SO_BACKLOG, 1024).
                         childOption(ChannelOption.SO_KEEPALIVE, true).
-                        childOption(ChannelOption.TCP_NODELAY, true).
+                        childOption(ChannelOption.TCP_NODELAY, true).   // 关闭Nagle,无延迟
                         childHandler(new ChannelInitializer<SocketChannel>() {
                             //创建NIOSocketChannel成功后，在进行初始化时，将它的ChannelHandler设置到ChannelPipeline中，用于处理网络IO事件
-                            protected void initChannel(SocketChannel channel) throws Exception {
+                            protected void initChannel(SocketChannel channel) {
                                 ChannelPipeline pipeline = channel.pipeline();
                                 pipeline.addLast(new IdleStateHandler(0, 0, 60));
                                 pipeline.addLast(new JSONEncoder());
