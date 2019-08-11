@@ -1,7 +1,8 @@
 package com.viewscenes.netsupervisor.registry;
 
 import org.I0Itec.zkclient.ZkClient;
-import org.apache.zookeeper.*;
+import org.apache.zookeeper.CreateMode;
+import org.apache.zookeeper.ZooDefs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,16 +30,17 @@ public class ServiceRegistry {
             }
         }
     }
+
     private ZkClient connectServer() {
-        ZkClient client = new ZkClient(registryAddress,20000,20000);
+        ZkClient client = new ZkClient(registryAddress, 20000, 20000);
         return client;
     }
 
-    private void AddRootNode(ZkClient client){
+    private void AddRootNode(ZkClient client) {
         boolean exists = client.exists(ZK_REGISTRY_PATH);
-        if (!exists){
+        if (!exists) {
             client.createPersistent(ZK_REGISTRY_PATH);
-            logger.info("创建zookeeper主节点 {}",ZK_REGISTRY_PATH);
+            logger.info("创建zookeeper主节点 {}", ZK_REGISTRY_PATH);
         }
     }
 

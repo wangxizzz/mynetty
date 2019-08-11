@@ -19,11 +19,12 @@ import java.util.Set;
 /**
  * Created by wangxi on 2018-12-03.
  */
-public class ClassPathRpcScanner extends ClassPathBeanDefinitionScanner{
+public class ClassPathRpcScanner extends ClassPathBeanDefinitionScanner {
 
     private RpcFactoryBean<?> rpcFactoryBean = new RpcFactoryBean<Object>();
 
     private Class<? extends Annotation> annotationClass;
+
     public void setAnnotationClass(Class<? extends Annotation> annotationClass) {
         this.annotationClass = annotationClass;
     }
@@ -76,6 +77,7 @@ public class ClassPathRpcScanner extends ClassPathBeanDefinitionScanner{
             }
         });
     }
+
     private void processBeanDefinitions(
             Set<BeanDefinitionHolder> beanDefinitions) {
 

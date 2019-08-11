@@ -21,5 +21,5 @@ public interface InfoUserService {
 
     String getNameById(String id);
 
-    Map<String,InfoUser> getAllUser();
+    Map<String, InfoUser> getAllUser();
 }

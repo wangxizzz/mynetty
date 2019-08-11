@@ -14,12 +14,12 @@ import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 public class JSONDecoder extends LengthFieldBasedFrameDecoder {
 
     public JSONDecoder() {
-        super(65535, 0, 4,0,4);
+        super(65535, 0, 4, 0, 4);
     }
 
     protected Object decode(ChannelHandlerContext ctx, ByteBuf in) throws Exception {
         ByteBuf decode = (ByteBuf) super.decode(ctx, in);
-        if (decode==null){
+        if (decode == null) {
             return null;
         }
         int data_len = decode.readableBytes();

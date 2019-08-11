@@ -23,8 +23,8 @@ public class IndexController {
 
     @RequestMapping("index")
     @ResponseBody
-    public String index(){
-        InfoUser user = new InfoUser(UUID.randomUUID().toString(),"王思萌","BeiJing");
+    public String index() {
+        InfoUser user = new InfoUser(UUID.randomUUID().toString(), "王思萌", "BeiJing");
         String json = JSONObject.toJSONString(user);
         logger.info(json);
         return json;

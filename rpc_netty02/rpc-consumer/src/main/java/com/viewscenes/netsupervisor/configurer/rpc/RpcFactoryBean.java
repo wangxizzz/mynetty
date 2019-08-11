@@ -15,7 +15,8 @@ public class RpcFactoryBean<T> implements FactoryBean<T> {
     @Autowired
     RpcFactory<T> factory;
 
-    public RpcFactoryBean() {}
+    public RpcFactoryBean() {
+    }
 
     public RpcFactoryBean(Class<T> rpcInterface) {
         this.rpcInterface = rpcInterface;
@@ -34,6 +35,6 @@ public class RpcFactoryBean<T> implements FactoryBean<T> {
     }
 
     public <T> T getRpc() {
-        return (T) Proxy.newProxyInstance(rpcInterface.getClassLoader(), new Class[] { rpcInterface },factory);
+        return (T) Proxy.newProxyInstance(rpcInterface.getClassLoader(), new Class[]{rpcInterface}, factory);
     }
 }

@@ -1,12 +1,12 @@
 package com.viewscenes.netsupervisor.connection;
 
 import com.viewscenes.netsupervisor.netty.client.NettyClient;
-import com.viewscenes.netsupervisor.netty.client.ThreadPool;
 import io.netty.channel.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.util.HashSet;
@@ -17,7 +17,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Component
-public class ConnectManage{
+public class ConnectManage {
 
     @Autowired
     NettyClient nettyClient;
@@ -27,18 +27,18 @@ public class ConnectManage{
     private CopyOnWriteArrayList<Channel> channels = new CopyOnWriteArrayList<>();
     private Map<SocketAddress, Channel> channelNodes = new ConcurrentHashMap<>();
 
-    public  Channel chooseChannel() {
-        if (channels.size()>0) {
+    public Channel chooseChannel() {
+        if (channels.size() > 0) {
             int size = channels.size();
             int index = (roundRobin.getAndAdd(1) + size) % size;
             return channels.get(index);
-        }else{
+        } else {
             return null;
         }
     }
 
-    public synchronized void updateConnectServer(List<String> addressList){
-        if (addressList.size()==0 || addressList==null){
+    public synchronized void updateConnectServer(List<String> addressList) {
+        if (addressList.size() == 0 || addressList == null) {
             logger.error("没有可用的服务器节点, 全部服务节点已关闭!");
             for (final Channel channel : channels) {
                 SocketAddress remotePeer = channel.remoteAddress();
@@ -62,9 +62,9 @@ public class ConnectManage{
 
         for (final SocketAddress serverNodeAddress : newAllServerNodeSet) {
             Channel channel = channelNodes.get(serverNodeAddress);
-            if (channel!=null && channel.isOpen()){
-                logger.info("当前服务节点已存在,无需重新连接.{}",serverNodeAddress);
-            }else{
+            if (channel != null && channel.isOpen()) {
+                logger.info("当前服务节点已存在,无需重新连接.{}", serverNodeAddress);
+            } else {
                 connectServerNode(serverNodeAddress);
             }
         }
@@ -83,23 +83,24 @@ public class ConnectManage{
         }
     }
 
-    private void connectServerNode(SocketAddress address){
+    private void connectServerNode(SocketAddress address) {
         try {
             Channel channel = nettyClient.doConnect(address);
-            addChannel(channel,address);
+            addChannel(channel, address);
         } catch (InterruptedException e) {
             e.printStackTrace();
-            logger.info("未能成功连接到服务器:{}",address);
+            logger.info("未能成功连接到服务器:{}", address);
         }
     }
-    private void addChannel(Channel channel,SocketAddress address) {
-        logger.info("加入Channel到连接管理器.{}",address);
+
+    private void addChannel(Channel channel, SocketAddress address) {
+        logger.info("加入Channel到连接管理器.{}", address);
         channels.add(channel);
         channelNodes.put(address, channel);
     }
 
-    public void removeChannel(Channel channel){
-        logger.info("从连接管理器中移除失效Channel.{}",channel.remoteAddress());
+    public void removeChannel(Channel channel) {
+        logger.info("从连接管理器中移除失效Channel.{}", channel.remoteAddress());
         SocketAddress remotePeer = channel.remoteAddress();
         channelNodes.remove(remotePeer);
         channels.remove(channel);
