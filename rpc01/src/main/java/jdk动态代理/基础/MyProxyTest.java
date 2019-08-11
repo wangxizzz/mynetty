@@ -7,7 +7,6 @@ package jdk动态代理.基础;
  * Decription:
  */
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Proxy;
 
 /**
